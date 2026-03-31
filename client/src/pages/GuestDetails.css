@@ -1,0 +1,823 @@
+/* ── Page shell ── */
+.gd-page {
+  background: var(--cream);
+  min-height: 100vh;
+}
+.gd-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.gd-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--sand);
+  border-top-color: var(--terra);
+  border-radius: 50%;
+  animation: gd-spin 0.8s linear infinite;
+}
+@keyframes gd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Breadcrumb / steps ── */
+.gd-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: white;
+  border-bottom: 1px solid rgba(61, 43, 31, 0.1);
+  position: sticky;
+  top: 68px;
+  z-index: 50;
+}
+.gd-back {
+  font-size: 0.88rem;
+  color: var(--terra);
+  cursor: pointer;
+  font-weight: 500;
+}
+.gd-back:hover {
+  text-decoration: underline;
+}
+.gd-steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gd-step {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.gd-step.done {
+  color: var(--terra);
+}
+.gd-step.active {
+  color: var(--brown);
+  font-weight: 600;
+}
+.gd-step-arrow {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ── Two-column layout ── */
+.gd-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 32px 96px;
+  align-items: flex-start;
+}
+
+
+
+
+/* ── Property snapshot card ── */
+.gd-property-card {
+  display: flex;
+  gap: 20px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 28px;
+  border: 1.5px solid rgba(196, 97, 42, 0.12);
+}
+.gd-property-img {
+  width: 130px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.gd-property-info {
+  flex: 1;
+}
+.gd-property-city {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 4px;
+}
+.gd-property-name {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.gd-property-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.gd-stars {
+  background: var(--terra);
+  color: white;
+  font-size: 0.78rem;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.gd-label-excellent {
+  font-size: 0.82rem;
+  color: var(--brown);
+  font-weight: 500;
+}
+.gd-amenity-pill {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--brown);
+  font-size: 0.73rem;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+/* ── What awaits you ── */
+.gd-experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.gd-experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: var(--sand);
+  border-radius: 12px;
+}
+.gd-exp-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.gd-experience-item h5 {
+  font-size: 0.92rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 4px;
+}
+.gd-experience-item p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── Sections ── */
+.gd-section {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+}
+.gd-section-title {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: var(--brown);
+}
+.gd-section-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ── Form fields ── */
+.gd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.gd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+.gd-field:last-child {
+  margin-bottom: 0;
+}
+.gd-field label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gd-field input,
+.gd-field select,
+.gd-field textarea {
+  border: 1.5px solid rgba(61, 43, 31, 0.18);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.93rem;
+  color: var(--brown);
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: "DM Sans", sans-serif;
+}
+.gd-field input:focus,
+.gd-field select:focus {
+  border-color: var(--terra);
+}
+.req {
+  color: var(--terra);
+}
+.gd-textarea {
+  width: 100%;
+  border: 1.5px solid rgba(61, 43, 31, 0.18);
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-size: 0.93rem;
+  color: var(--brown);
+  background: white;
+  outline: none;
+  resize: vertical;
+  font-family: "DM Sans", sans-serif;
+  transition: border-color 0.2s;
+}
+.gd-textarea:focus {
+  border-color: var(--terra);
+}
+
+/* ── Radio cards (who are you booking for) ── */
+.gd-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.gd-radio-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1.5px solid rgba(61, 43, 31, 0.18);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.gd-radio-card input[type="radio"] {
+  display: none;
+}
+.gd-radio-card.selected {
+  border-color: var(--terra);
+  background: rgba(196, 97, 42, 0.04);
+}
+.gd-radio-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.gd-radio-icon {
+  font-size: 1.4rem;
+}
+.gd-radio-content strong {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 3px;
+}
+.gd-radio-content p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── Custom checkbox ── */
+.gd-checkbox-row {
+  margin-bottom: 12px;
+}
+.gd-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.93rem;
+  color: var(--brown);
+  user-select: none;
+}
+.gd-checkbox-label input[type="checkbox"] {
+  display: none;
+}
+.gd-checkmark {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  border: 2px solid rgba(61, 43, 31, 0.3);
+  background: white;
+  transition: all 0.2s;
+  position: relative;
+}
+.gd-checkbox-label input:checked + .gd-checkmark {
+  background: var(--terra);
+  border-color: var(--terra);
+}
+.gd-checkbox-label input:checked + .gd-checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+/* ── Info notes ── */
+.gd-info-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(196, 97, 42, 0.07);
+  border: 1px solid rgba(196, 97, 42, 0.2);
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-size: 0.87rem;
+  color: var(--brown);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* ── Arrival section ── */
+.gd-arrival-info {
+  background: var(--sand);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 32px;
+}
+.gd-arrival-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gd-arrival-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.gd-arrival-row strong {
+  font-size: 1rem;
+  color: var(--brown);
+}
+.gd-arrival-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ── Slide-in animation ── */
+.gd-slide-in {
+  animation: gd-slide 0.25s ease;
+}
+@keyframes gd-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Submit button ── */
+.gd-submit-btn {
+  width: 100%;
+  background: var(--terra);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 17px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+}
+.gd-submit-btn:hover:not(:disabled) {
+  background: var(--terra-light);
+  transform: translateY(-1px);
+}
+.gd-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.gd-submit-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ── RIGHT COLUMN: Summary card ── */
+.gd-right {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.gd-summary-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 40px rgba(61, 43, 31, 0.12);
+  padding: 28px;
+  overflow: hidden;
+}
+.gd-summary-title {
+  font-size: 1.2rem;
+  margin-bottom: 22px;
+}
+
+/* Date blocks */
+.gd-summary-dates {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.gd-date-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gd-date-block label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gd-date-block strong {
+  font-size: 0.9rem;
+  color: var(--brown);
+  line-height: 1.3;
+}
+.gd-date-block span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.gd-dates-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--terra);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+}
+.gd-dates-divider span {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.gd-dates-divider small {
+  font-size: 0.68rem;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+.gd-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+.gd-summary-divider {
+  border: none;
+  border-top: 1.5px solid rgba(61, 43, 31, 0.1);
+  margin: 16px 0;
+}
+
+/* Price rows */
+.gd-price-title {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+.gd-price-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gd-price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.gd-price-row.total-row {
+  padding-top: 12px;
+  border-top: 1.5px solid rgba(61, 43, 31, 0.1);
+  font-size: 1rem;
+  color: var(--brown);
+}
+
+/* Damage deposit */
+.gd-deposit-box {
+  background: rgba(46, 158, 91, 0.07);
+  border: 1.5px solid rgba(46, 158, 91, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 18px 0 0;
+}
+.gd-deposit-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.gd-deposit-icon {
+  font-size: 1.3rem;
+}
+.gd-deposit-header h5 {
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+  color: var(--brown);
+}
+.gd-deposit-badge {
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+.gd-deposit-header > strong {
+  margin-left: auto;
+  font-size: 0.95rem;
+  color: var(--brown);
+}
+.gd-deposit-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Tax note */
+.gd-tax-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #065f46;
+  background: #ecfdf5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+}
+
+/* Policies */
+.gd-policies {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gd-policy {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.gd-policy-icon {
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.gd-policy-icon.green {
+  color: #2e9e5b;
+}
+
+/* Help box */
+.gd-help-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--card-shadow);
+  font-size: 0.88rem;
+}
+.gd-help-box > span {
+  font-size: 1.4rem;
+}
+.gd-help-box strong {
+  display: block;
+  margin-bottom: 2px;
+}
+.gd-help-box p {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+
+
+
+/* ── RESPONSIVE / MEDIA QUERIES ── */
+
+/* Tablet landscape (≤1100px) */
+@media (max-width: 1100px) {
+  .gd-layout {
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    padding: 32px 24px 80px;
+  }
+}
+
+/* Tablet portrait (≤900px) — stack into single column */
+@media (max-width: 900px) {
+  .gd-layout {
+    grid-template-columns: 1fr;
+    padding: 24px 20px 80px;
+  }
+
+  /* Move summary card above the form on mobile */
+  .gd-right {
+    position: static;
+    order: -1;
+  }
+
+  .gd-breadcrumb {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    top: 60px;
+  }
+
+  .gd-steps {
+    font-size: 0.78rem;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .gd-breadcrumb {
+    padding: 12px 16px;
+    top: 56px;
+  }
+
+  .gd-layout {
+    padding: 16px 14px 72px;
+    gap: 16px;
+  }
+
+  /* Property card stacks vertically */
+  .gd-property-card {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .gd-property-img {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Form rows become single column */
+  .gd-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Radio cards stack */
+  .gd-radio-group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .gd-section {
+    padding: 20px 16px 18px;
+    border-radius: 12px;
+  }
+
+  .gd-section-title {
+    font-size: 1.05rem;
+  }
+
+  /* Arrival info wraps */
+  .gd-arrival-info {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  /* Summary card */
+  .gd-summary-card {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+
+  .gd-summary-title {
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+  }
+
+  /* Date blocks — tighten up */
+  .gd-summary-dates {
+    gap: 8px;
+  }
+
+  .gd-date-block strong {
+    font-size: 0.82rem;
+  }
+
+  .gd-dates-divider {
+    padding: 8px 10px;
+  }
+
+  .gd-dates-divider span {
+    font-size: 1rem;
+  }
+
+  /* Submit button */
+  .gd-submit-btn {
+    padding: 15px;
+    font-size: 0.98rem;
+    border-radius: 10px;
+  }
+
+  /* Help box */
+  .gd-help-box {
+    padding: 14px 16px;
+  }
+
+  /* Step arrows — hide middle steps on very small screens */
+  .gd-step-arrow {
+    display: none;
+  }
+
+  .gd-steps {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .gd-step {
+    font-size: 0.75rem;
+  }
+}
+
+/* Very small phones (≤380px) */
+@media (max-width: 380px) {
+  .gd-layout {
+    padding: 12px 10px 64px;
+  }
+
+  .gd-section {
+    padding: 16px 14px;
+  }
+
+  .gd-property-img {
+    height: 150px;
+  }
+
+  .gd-summary-dates {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .gd-dates-divider {
+    display: none;
+  }
+
+  .gd-date-block {
+    background: var(--sand);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .gd-submit-btn {
+    font-size: 0.93rem;
+    padding: 14px;
+  }
+}
