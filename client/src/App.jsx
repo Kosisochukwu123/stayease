@@ -10,6 +10,7 @@ import MyBookings from "./pages/MyBookings";
 import Admin from "./pages/Admin";
 import GuestDetails from "./pages/GuestDetails";
 import Attractions from "./pages/Attractions";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Footer from "./components/Footer";
 import About from "./pages/footer/About";
@@ -27,6 +28,8 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToTop />
+
         <div
           style={{
             display: "flex",
